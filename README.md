@@ -4,8 +4,14 @@
 
 ALl this codes written in `Matlab`
 
-## Project1 - checkerboard 
+## Project1 - Checkerboard 
 
 Plot drawing practices with Matlab 😎
 
 <img src="./Images/checkerboard.jpg" width="400"> 
+
+## Project2 - Matlab Clock
+
+Dynamic Plot `set` practices with Matlab Clock 🕗
+
+<img src="./Images/clock.jpg" width="400"> 
