@@ -4,22 +4,19 @@ Time = clock;
 subplot(2, 3, 1)
 axis square;
 axis off;
-t = text(0, 0, [num2str(Time(4)) '시'])
-t(1).FontSize = 30;
+colckTitle1 = text(0, 0, [num2str(Time(4)) '시'], 'FontSize', 60);
 
 subplot(2, 3, 2)
 axis square;
 axis off;
 title([num2str(Time(1)) ' ' num2str(Time(2)) ' ' num2str(Time(3)) ' ' ])
 
-t = text(0, 0, [num2str(Time(5)) '분'])
-t(1).FontSize = 30;
+colckTitle2 = text(0, 0, [num2str(Time(5)) '분'], 'FontSize', 60);
 
 subplot(2, 3, 3)
 axis square;
 axis off;
-t = text(0, 0, [num2str(fix(Time(6))) '초'])
-t(1).FontSize = 30;
+colckTitle3 = text(0, 0, [num2str(floor(Time(6))) '초'], 'FontSize', 60);
 
 subplot(2, 3, 4)
 axis square;
@@ -73,6 +70,10 @@ while(1)
     set(ClockHand_H, 'XData', [0, hour_x], 'YData', [0, hour_y]);
     set(ClockHand_M, 'XData', [0, min_x], 'YData', [0, min_y]);
     set(ClockHand_S, 'XData', [Small_clock_X, sec_x], 'YData', [0, sec_y]);
+
+    set(colckTitle1, 'String', [num2str(Time(4)) '시'])
+    set(colckTitle2, 'String', [num2str(Time(5)) '분'])
+    set(colckTitle3, 'String', [num2str(floor(Time(6))) '초'])
 
     drawnow;
 end
