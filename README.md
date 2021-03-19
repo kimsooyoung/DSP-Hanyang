@@ -15,3 +15,10 @@ Plot drawing practices with Matlab 😎
 Dynamic Plot `set` practices with Matlab Clock 🕗
 
 <img src="./Images/clock.jpg" width="400"> 
+
+## Project2 - Music FFT
+
+Adapt FFT to Music Data with Matlab `fft` function 🎷
+
+<img src="./Images/fft_music.jpg" width="400"> 
+
