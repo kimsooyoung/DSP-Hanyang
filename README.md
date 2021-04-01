@@ -33,3 +33,7 @@ Extract each note from the sound source and use `fft` to find out which note it 
 Original music sounds noisy, make proper `LPF`, then cancel noise from original music source. 🎚
 
 <img src="./Images/sound_noise_filtering.jpg" width="400"> 
+
+# Author
+
+* [Swimming Kim](https://github.com/kimsooyoung)
