@@ -4,14 +4,14 @@
 % Load ALL those Notes
 
 % First Row contains index, So seconds rows are imported
-% note1 = load('Note1.mat').brushedData1(:,2);
-% note2 = load('Note2.mat').brushedData2(:,2);
-% note3 = load('Note3.mat').brushedData3(:,2);
-% note4 = load('Note4.mat').brushedData4(:,2);
-% note5 = load('Note5.mat').brushedData5(:,2);
-% note6 = load('Note6.mat').brushedData6(:,2);
-% note7 = load('Note7.mat').brushedData7(:,2);
-% note8 = load('Note8.mat').brushedData8(:,2);
+% note1 = load('note_1.mat').Note1(:,2);
+% note2 = load('note_2.mat').Note2(:,2);
+% note3 = load('note_3.mat').Note3(:,2);
+% note4 = load('note_4.mat').Note4(:,2);
+% note5 = load('note_5.mat').Note5(:,2);
+% note6 = load('note_6.mat').Note6(:,2);
+% note7 = load('note_7.mat').Note7(:,2);
+% note8 = load('note_8.mat').Note8(:,2);
 
 note1 = load('note_1.mat').brushedData1(:,2);
 note2 = load('note_2.mat').brushedData2(:,2);
@@ -60,53 +60,9 @@ fft_note8 = abs(fft(note8, fft_size));
 
 %% Plotting
 
-subplot(4, 2, 1)
 axis([0 500 0 100])
 hold on
-title("3옥타브 도")
-plot(x_step, fft_note1)
-
-subplot(4, 2, 2)
-axis([0 500 0 100])
-hold on
-title("2옥타브 라")
-plot(x_step, fft_note2)
-
-subplot(4, 2, 3)
-axis([0 500 0 100])
-hold on
-title("2옥타브 라")
 plot(x_step, fft_note3)
-
-subplot(4, 2, 4)
-axis([0 500 0 100])
-hold on
-title("2옥타브 파")
-plot(x_step, fft_note4)
-
-subplot(4, 2, 5)
-axis([0 500 0 100])
-hold on
-title("2옥타브 파")
-plot(x_step, fft_note5)
-
-subplot(4, 2, 6)
-axis([0 500 0 100])
-hold on
-title("2옥타브 라")
-plot(x_step, fft_note6)
-
-subplot(4, 2, 7)
-axis([0 500 0 100])
-hold on
-title("2옥타브 파")
-plot(x_step, fft_note7)
-
-subplot(4, 2, 8)
-axis([0 500 0 100])
-hold on
-title("2옥타브 라")
-plot(x_step, fft_note8)
 
 %% 
 
