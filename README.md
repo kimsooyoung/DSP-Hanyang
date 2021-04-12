@@ -34,6 +34,12 @@ Original music sounds noisy, make proper `LPF`, then cancel noise from original 
 
 <img src="./Images/sound_noise_filtering.jpg" width="400"> 
 
+## Project6 - Z transform 3D plotting 
+
+Implement **Z-transform** then draw 3D plots with `mesh()` and `plot3()` functions 🧊
+
+<img src="./Images/z_transform.jpg" width="400"> 
+
 # Author
 
 * [Swimming Kim](https://github.com/kimsooyoung)
