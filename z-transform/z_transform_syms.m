@@ -11,7 +11,5 @@ f3(a, n) = exp(-a * n);
 F3 = ztrans(f3)
 
 ff1 = iztrans(F1)
-
 ff2 = iztrans(F2)
-
 ff3 = iztrans(F3)

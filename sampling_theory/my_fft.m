@@ -7,11 +7,11 @@ function [X, n] = my_fft(x, N)
 
     fft_signal = fft(x, N);
     X = abs(fft_signal);
-
+    
+    % Find Maximum Value
     n_0 = find(X < 12 & X > 8);
     n_0 = n_0(1);
     
-    % n = n_0;
+    % Calculation from Proportional expression
     n = round((n_0 * 44100) / (N * 1000), 2);
-
 end

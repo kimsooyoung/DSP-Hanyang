@@ -13,7 +13,7 @@ note6 = load('note_6.mat').brushedData6(:,2);
 note7 = load('note_7.mat').brushedData7(:,2);
 note8 = load('note_8.mat').brushedData8(:,2);
 
-%% 
+%% Setup Variables
 
 fs = 44100;
 fft_size = 2^16;
@@ -27,7 +27,7 @@ fft_size = 2^16;
 % sound(note7, fs);
 % sound(note8, fs);
 
-x_step = ((1:1:fft_size) - 1) / fft_size * fs;
+x_step = fs * ((1:1:fft_size) - 1) / fft_size;
 
 fft_note1 = abs(fft(note1, fft_size));
 fft_note2 = abs(fft(note2, fft_size));
@@ -37,9 +37,6 @@ fft_note5 = abs(fft(note5, fft_size));
 fft_note6 = abs(fft(note6, fft_size));
 fft_note7 = abs(fft(note7, fft_size));
 fft_note8 = abs(fft(note8, fft_size));
-
-
-
 %% Plotting
 
 subplot(4, 2, 1)

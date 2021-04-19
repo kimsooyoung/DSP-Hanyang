@@ -3,13 +3,13 @@ syms n positive
 syms a b z
 
 X_z = -z / (z - 0.5);
-x_n = iztrans(X_z)
+x_n = iztrans(X_z);
 
 % Result => x_n = -(1/2)^n
 %% Variables Setup
 
 fft_size = 2^12;
-N = 20; 
+N = 20;
 t = 0: 1: 20;
 x_c = zeros(1, fft_size + 1);
 

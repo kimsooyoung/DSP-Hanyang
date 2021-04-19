@@ -41,11 +41,19 @@ for n=1:19
 end
 
 %% Draw Black/White Points
-X = randi(19);
-Y = randi(19);
-
 r_big = 0.5;
 
-for back_index=0:360
-    line([X-10, X-10 + r_big * cos((back_index) * pi/180)], [Y-10, Y-10 + r_big * sin((back_index) * pi/180)], 'LineWidth', 5, 'Color', [1 1 1])
+for i=0:5
+    X = randi(19);
+    Y = randi(19);
+
+    for back_index=0:360
+        % Draw White Points
+        if rem(i, 2) == 1 
+            line([X-10, X-10 + r_big * cos((back_index) * pi/180)], [Y-10, Y-10 + r_big * sin((back_index) * pi/180)], 'LineWidth', 5, 'Color', [1 1 1])
+        % Draw Black Points
+        else
+            line([X-10, X-10 + r_big * cos((back_index) * pi/180)], [Y-10, Y-10 + r_big * sin((back_index) * pi/180)], 'LineWidth', 5, 'Color', [0 0 0])
+        end
+    end
 end
