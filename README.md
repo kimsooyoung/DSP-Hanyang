@@ -40,6 +40,12 @@ Implement **Z-transform** then draw 3D plots with `mesh()` and `plot3()` functio
 
 <img src="./Images/z_transform.jpg" width="400"> 
 
+## Project7 - Real Radar Signal Processing 
+
+Read Radar Data from [`Novelda X4M02`](https://www.laonuri.com/en/product/x4m02/) 
+
+<img src="./Images/BandPassFilter_BF_AF.jpg" width="400"> 
+
 # Author
 
 * [Swimming Kim](https://github.com/kimsooyoung)
