@@ -11,7 +11,7 @@ close all;
 %% Check Variables
 % AvailablePortsName = getAvailableComPort();
 % COM = AvailablePortsName(2);
-COM1 = 'COM4';
+COM1 = 'COM5';
 FPS = 20;
 % COM = serialInfo.AvailableSerialPorts(2);
 
@@ -23,6 +23,7 @@ SaveOnOffFlag = 1;
 MaxDataLength = FPS*60*60*CollectionH;
 
 Alpha = 0.95;
+Alpha2 = 0.55;
 TxPower = 3; % Default: 2, 1 ~ 3
 TxCenterFreq = 4;
 % 3: EU  6.0 - 8.5 GHz
@@ -193,12 +194,17 @@ try
                 WatchTime = 10;
                 BreathingWindow = FPS*WatchTime;
                 DataLength1 = length(frame);
-                DataLengthCorrected1 = round(DataLength1*CorrectMeter/(FrameStop - FrameStart));
+                DataLengthCorrected1 = round(DataLength1*CorrectMeter/(FrameStop - FrameStart)); % Maximum observed distance
                 RawData_Ori1 = zeros(MaxDataLength,DataLengthCorrected1); % Original Raw Data
                 RawData1 = zeros(MaxDataLength,DataLengthCorrected1); % DC Remove, Bandpass Filtered
+                HilbertHistory = zeros(MaxDataLength,DataLengthCorrected1);
+                DistanceHistory = zeros(MaxDataLength,1);
+                
                 ClockArray1 = zeros(MaxDataLength,6);
                 LowPass_Clutter1 = zeros(1,DataLengthCorrected1);
+                LowPass_Clutter2 = zeros(1,DataLengthCorrected1);
                 B_LowPass1 = zeros(MaxDataLength,DataLengthCorrected1);
+                B_LowPass2 = zeros(MaxDataLength,DataLengthCorrected1);
             end
             
             RawData_Ori1(DataCursor1,:) = frame(1:DataLengthCorrected1);
@@ -206,9 +212,15 @@ try
             RawData1(DataCursor1,:) = RawData1(DataCursor1,:) - mean(RawData1(DataCursor1,:));
             RawData1(DataCursor1,:) = conv(RawData1(DataCursor1,:),b,'same'); % Band Pass Filter Adapted
             
-            LowPass_Clutter1 = Alpha .* LowPass_Clutter1 + (1-Alpha) .* RawData1(DataCursor1,:);
+            HilbertHistory(DataCursor1,:)  = abs(hilbert(RawData1(DataCursor1,:)));
+            [MaxValue, MaxIndex] = max(HilbertHistory(DataCursor1,:));
+            DistanceHistory(DataCursor1,:) = 0.0064 * MaxIndex;
+            
+            LowPass_Clutter1 = Alpha  .* LowPass_Clutter1 + (1-Alpha) .* RawData1(DataCursor1,:);
+            LowPass_Clutter2 = Alpha2 .* LowPass_Clutter2 + (1-Alpha2) .* RawData1(DataCursor1,:);
             
             B_LowPass1(DataCursor1,:) = RawData1(DataCursor1,:) - LowPass_Clutter1;
+            B_LowPass2(DataCursor1,:) = RawData1(DataCursor1,:) - LowPass_Clutter2;
             
             %     B_LowPass(DataCursor,:) = abs(hilbert(B_LowPass(DataCursor,:)));
             

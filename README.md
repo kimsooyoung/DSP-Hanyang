@@ -42,9 +42,15 @@ Implement **Z-transform** then draw 3D plots with `mesh()` and `plot3()` functio
 
 ## Project7 - Real Radar Signal Processing 
 
-Read Radar Data from [`Novelda X4M02`](https://www.laonuri.com/en/product/x4m02/) 
+Read Radar Data from [`Novelda X4M02`](https://www.laonuri.com/en/product/x4m02/) 📡
 
 <img src="./Images/BandPassFilter_BF_AF.jpg" width="400"> 
+
+## Project8 - Distance Observation with Radar
+
+Second project with [`Novelda X4M02`](https://www.laonuri.com/en/product/x4m02/), apply `Hilbert Transform` & `Band Pass Filter` to Raw Radar signal. Then distinguish Clutter. 📡
+
+<img src="./Images/hilbert_mesh.jpg" width="400"> 
 
 # Author
 
