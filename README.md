@@ -52,6 +52,18 @@ Second project with [`Novelda X4M02`](https://www.laonuri.com/en/product/x4m02/)
 
 <img src="./Images/hilbert_mesh.jpg" width="400"> 
 
+## Project8 - Hand Waving Detection 
+
+Third project with [`Novelda X4M02`](https://www.laonuri.com/en/product/x4m02/). Detect Hand Position with Background subtraction. 🖐
+
+<img src="./Images/hand_wave.jpg" width="400"> 
+
+## Project8 - Human Point Detection 
+
+Fourth project with [`Novelda X4M02`](https://www.laonuri.com/en/product/x4m02/). Detect Human Position by respiration monitoring. 😮‍💨
+
+<img src="./Images/Animation.gif" width="400"> 
+
 # Author
 
 * [Swimming Kim](https://github.com/kimsooyoung)
