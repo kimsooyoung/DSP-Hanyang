@@ -160,13 +160,13 @@ try
             switch dataType
                 case 'rf'
                     ph1.YData = frame;
-                    %                     ylim([-1.2 1.2]);
-%                     ylim([-0.5 0.5]);
+                    % ylim([-1.2 1.2]);
+                    % ylim([-0.5 0.5]);
                 case 'bb'
                     frame = frame(1:end/2) + 1i*frame(end/2 + 1:end);
                     ph1.YData = abs(frame);
-                    %                 ph.YData = abs(frame_Raw);
-%                     ylim([-0.1 2]);
+                    % ph.YData = abs(frame_Raw);
+                    % ylim([-0.1 2]);
             end
             
             th1.String = ['FrameNo: ' num2str(i1) ' - Length: ' num2str(length(frame)) ' - FrameCtr: ' num2str(ctr)];
@@ -175,7 +175,7 @@ try
                 disp(['Packets available: ' num2str(radar1.bufferSize())]);
             end
             
-            %% 
+%% 
             
             if ( (DataCursor1==1)&&(ResetCounter1==0) )
                 DataLength1 = length(frame);
@@ -210,7 +210,7 @@ try
             Hilbert_temp =  abs(hilbert(B_LowPass1(DataCursor1,:)));                              % Hilbert Transform & abs function
             Hilbert_History(DataCursor1,:) = Hilbert_temp;                                        % Make Hilbert History 
 
-           %% HP Search
+%% HP Search
             SumArr = SumArr - B_Low_Stack_ForHP(DataCursor_ForHP,:);
             SquareSumArr = SquareSumArr - B_Low_Stack_ForHP(DataCursor_ForHP,:).^2;
 
@@ -223,10 +223,10 @@ try
                 DataCursor_ForHP = 1;
             end
                     
-            VarArr =  SquareSumArr ./ (B_Low_SaveDataN_ForHP) - SumArr.^2;                         %(a^2 + b^2 + c^2)/n  - m^2     standard deviation
+            VarArr =  (SquareSumArr / B_Low_SaveDataN_ForHP) - (SumArr / B_Low_SaveDataN_ForHP).^2;                         %(a^2 + b^2 + c^2)/n  - m^2     standard deviation
             [~,HP] =  max(VarArr);                                                                 % find HP point using Max Function
             fprintf([ 'Human Point : ' num2str(HP*0.0064 + FrameStart) ' 2015036580 김수영' '\n']) % print Real HP distance from radar
-%             fprintf([ 'Human Point : ' num2str(HP*0.0064 + FrameStart) '\n'])
+            % fprintf([ 'Human Point : ' num2str(HP*0.0064 + FrameStart) '\n'])
         %%
             
             ClockArray1(DataCursor1,:) = datenum(clock);
