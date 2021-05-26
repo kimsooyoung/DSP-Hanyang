@@ -64,6 +64,12 @@ Fourth project with [`Novelda X4M02`](https://www.laonuri.com/en/product/x4m02/)
 
 <img src="./Images/Animation.gif" width="400"> 
 
+## Project8 - Human Point Detection 2
+
+Fifth project with [`Novelda X4M02`](https://www.laonuri.com/en/product/x4m02/). Detect Human Vital Sign by respiration monitoring and heartbeat monitoring. 😮‍💨 & ❤
+
+<img src="./Images/vital_sign.jpg" width="400"> 
+
 # Author
 
 * [Swimming Kim](https://github.com/kimsooyoung)
