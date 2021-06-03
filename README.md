@@ -73,7 +73,7 @@ Fifth project with [`Novelda X4M02`](https://www.laonuri.com/en/product/x4m02/).
 ## Project8 - Human Point Detection 3
 
 Fifth project with [`Novelda X4M02`](https://www.laonuri.com/en/product/x4m02/). 
-Detected Vital Sign has a harmonic distortion. Visulaize that. And adapt Low Pass Filter to Vital sign.
+Detected Vital Sign has a harmonic distortion. Visulaize that. And adapt Low Pass Filter to Vital sign. 📶
 
 <img src="./Images/vital_sign_harmonic.jpg" width="400"> 
 
