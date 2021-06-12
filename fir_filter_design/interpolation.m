@@ -38,7 +38,7 @@ fft_x_triple_abs = abs(fft(x_n_triple_zero_filled, fft_size)); fft_lpf_abs2 = ab
 figure(2);
 subplot(3,1,1); plot(pi_index, fft_x_n_abs); title("|X(omega)|");
 subplot(3,2,3); plot(pi_index, fft_x_double_abs); title("|X_2(omega)|"); subplot(3,2,4); plot(pi_index, fft_lpf_abs); title("|H(omega)|");
-subplot(3,2,5); plot(pi_index, fft_x_triple_abs); title("|X_3(omega)|"); subplot(3,2,6); plot(pi_index, fft_lpf_abs2); title("|H(omega)|");
+subplot(3,2,5); plot(pi_index, fft_x_triple_abs); title("|X_3(omega)|"); subplot(3,2,6); plot(pi_index, fft_lpf_abs2); title("|H_2(omega)|");
 %%
 y_2_omega = fft(x_n_doubled_zero_filled, fft_size) .* fft(lpf, fft_size); y_2_n = ifft(y_2_omega);
 y_3_omega = fft(x_n_triple_zero_filled, fft_size) .* fft(lpf2, fft_size); y_3_n = ifft(y_3_omega);
